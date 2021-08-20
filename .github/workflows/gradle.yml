@@ -35,3 +35,12 @@ jobs:
         run: |
           ./gradlew setupDecompWorkspace
           ./gradlew build
+      - name: List files
+        run: ls
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          # Artifact name
+          name: client
+          # A file, directory or wildcard pattern that describes what to upload
+          path: ./build/libs/
